@@ -1,0 +1,348 @@
+/* =========================
+   WINDOWS KIDS APPS
+   ========================= */
+
+/* =========================
+   PAINT
+   ========================= */
+
+.paint-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    height: 100%;
+}
+
+.paint-toolbar {
+    display: flex;
+    gap: 10px;
+}
+
+.paint-toolbar button {
+    border: none;
+
+    padding: 10px 16px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #60a5fa,
+            #a78bfa
+        );
+
+    transition:
+        transform .15s,
+        opacity .15s;
+}
+
+.paint-toolbar button:hover {
+    transform: translateY(-2px);
+}
+
+.paint-toolbar button:active {
+    transform: scale(.95);
+}
+
+#paint-canvas {
+    flex: 1;
+
+    width: 100%;
+
+    background: white;
+
+    border:
+        3px dashed #c4b5fd;
+
+    border-radius: 16px;
+
+    cursor: crosshair;
+}
+
+/* =========================
+   CALCULATOR
+   ========================= */
+
+.calculator-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+#calc-display {
+    width: 100%;
+
+    height: 60px;
+
+    border: none;
+
+    outline: none;
+
+    padding: 0 16px;
+
+    text-align: right;
+
+    font-size: 26px;
+
+    border-radius: 14px;
+
+    background: #eef2ff;
+}
+
+.calculator-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.calculator-grid button {
+    height: 56px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    background: white;
+
+    box-shadow:
+        0 2px 6px rgba(0,0,0,.08);
+
+    transition:
+        transform .15s,
+        box-shadow .15s;
+}
+
+.calculator-grid button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.12);
+}
+
+.calculator-grid button:active {
+    transform: scale(.95);
+}
+
+.calculator-grid .clear {
+    grid-column: span 4;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef4444,
+            #f97316
+        );
+}
+
+/* =========================
+   GAMES
+   ========================= */
+
+#guess-game-btn {
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #06b6d4
+        );
+
+    margin-bottom: 16px;
+}
+
+#game-area {
+    margin-top: 10px;
+
+    padding: 18px;
+
+    border-radius: 16px;
+
+    background: #f9fafb;
+
+    border:
+        2px dashed #d1d5db;
+}
+
+.game-input {
+    width: 100%;
+
+    padding: 12px;
+
+    margin: 12px 0;
+
+    border:
+        2px solid #dbeafe;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+}
+
+.game-button {
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b82f6,
+            #8b5cf6
+        );
+}
+
+.game-message {
+    margin-top: 15px;
+
+    font-weight: bold;
+
+    font-size: 18px;
+}
+
+/* =========================
+   KID BROWSER
+   ========================= */
+
+.window-content ul {
+    margin-top: 12px;
+}
+
+.window-content ul li {
+    list-style: none;
+
+    margin-bottom: 12px;
+}
+
+.window-content ul li a {
+    display: inline-block;
+
+    padding: 10px 14px;
+
+    border-radius: 12px;
+
+    background: #eef2ff;
+
+    transition:
+        transform .15s,
+        background .15s;
+}
+
+.window-content ul li a:hover {
+    background: #dbeafe;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   EXPLORER
+   ========================= */
+
+.window-content li {
+    padding: 10px 12px;
+
+    border-radius: 12px;
+
+    background: #f9fafb;
+
+    margin-bottom: 8px;
+
+    transition: background .15s;
+}
+
+.window-content li:hover {
+    background: #eef2ff;
+}
+
+/* =========================
+   CUTE EFFECTS
+   ========================= */
+
+.kid-card {
+    padding: 16px;
+
+    border-radius: 16px;
+
+    background: white;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.08);
+}
+
+.rainbow-text {
+    background: linear-gradient(
+        90deg,
+        #ef4444,
+        #f59e0b,
+        #22c55e,
+        #3b82f6,
+        #8b5cf6
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    font-weight: bold;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 700px) {
+
+    #calc-display {
+        font-size: 20px;
+    }
+
+    .calculator-grid button {
+        height: 48px;
+        font-size: 16px;
+    }
+
+    #guess-game-btn {
+        width: 100%;
+    }
+}

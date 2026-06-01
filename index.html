@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Windows Kids</title>
+
+    <link rel="stylesheet" href="css/desktop.css">
+    <link rel="stylesheet" href="css/taskbar.css">
+    <link rel="stylesheet" href="css/windows.css">
+    <link rel="stylesheet" href="css/apps.css">
+</head>
+<body>
+
+    <!-- Desktop -->
+    <div id="desktop">
+
+        <!-- Desktop Icons -->
+        <div class="desktop-icon" data-app="paint">
+            <div class="icon">🎨</div>
+            <span>Paint</span>
+        </div>
+
+        <div class="desktop-icon" data-app="calculator">
+            <div class="icon">🧮</div>
+            <span>Calculator</span>
+        </div>
+
+        <div class="desktop-icon" data-app="games">
+            <div class="icon">🎮</div>
+            <span>Games</span>
+        </div>
+
+        <div class="desktop-icon" data-app="browser">
+            <div class="icon">🌐</div>
+            <span>Kid Browser</span>
+        </div>
+
+        <div class="desktop-icon" data-app="explorer">
+            <div class="icon">📁</div>
+            <span>Explorer</span>
+        </div>
+
+    </div>
+
+    <!-- Start Menu -->
+    <div id="start-menu" class="hidden">
+
+        <div class="start-header">
+            🌈 Windows Kids
+        </div>
+
+        <div class="start-app" data-app="paint">
+            🎨 Paint
+        </div>
+
+        <div class="start-app" data-app="calculator">
+            🧮 Calculator
+        </div>
+
+        <div class="start-app" data-app="games">
+            🎮 Games
+        </div>
+
+        <div class="start-app" data-app="browser">
+            🌐 Kid Browser
+        </div>
+
+        <div class="start-app" data-app="explorer">
+            📁 Explorer
+        </div>
+
+    </div>
+
+    <!-- Windows Container -->
+    <div id="windows-container"></div>
+
+    <!-- Taskbar -->
+    <div id="taskbar">
+
+        <button id="start-button">
+            🌈 Start
+        </button>
+
+        <div id="taskbar-apps"></div>
+
+        <div id="clock">
+            00:00
+        </div>
+
+    </div>
+
+    <!-- Templates -->
+
+    <!-- Paint -->
+    <template id="paint-template">
+
+        <div class="window">
+
+            <div class="title-bar">
+                <span>🎨 Paint</span>
+
+                <div class="window-buttons">
+                    <button class="close-btn">✖</button>
+                </div>
+            </div>
+
+            <div class="window-content paint-content">
+
+                <div class="paint-toolbar">
+                    <button id="clear-canvas">
+                        Xóa
+                    </button>
+                </div>
+
+                <canvas id="paint-canvas"
+                        width="700"
+                        height="450">
+                </canvas>
+
+            </div>
+
+        </div>
+
+    </template>
+
+    <!-- Calculator -->
+    <template id="calculator-template">
+
+        <div class="window">
+
+            <div class="title-bar">
+                <span>🧮 Calculator</span>
+
+<div class="window-buttons">
+    <button class="minimize-btn">➖</button>
+    <button class="maximize-btn">□</button>
+    <button class="close-btn">✖</button>
+</div>
+            </div>
+
+            <div class="window-content calculator-content">
+
+                <input
+                    id="calc-display"
+                    readonly
+                    value="">
+
+                <div class="calculator-grid">
+
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    <button>/</button>
+
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>*</button>
+
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>-</button>
+
+                    <button>0</button>
+                    <button>.</button>
+                    <button>=</button>
+                    <button>+</button>
+
+                    <button class="clear">
+                        C
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </template>
+
+    <!-- Games -->
+    <template id="games-template">
+
+        <div class="window">
+
+            <div class="title-bar">
+                <span>🎮 Games</span>
+
+                <div class="window-buttons">
+                    <button class="close-btn">✖</button>
+                </div>
+            </div>
+
+            <div class="window-content">
+
+                <h2>Mini Games</h2>
+
+                <button id="guess-game-btn">
+                    🎲 Guess Number
+                </button>
+
+                <div id="game-area"></div>
+
+            </div>
+
+        </div>
+
+    </template>
+
+    <!-- Browser -->
+    <template id="browser-template">
+
+        <div class="window">
+
+            <div class="title-bar">
+                <span>🌐 Kid Browser</span>
+
+                <div class="window-buttons">
+                    <button class="close-btn">✖</button>
+                </div>
+            </div>
+
+            <div class="window-content">
+
+                <h2>Trang web an toàn</h2>
+
+                <ul>
+                    <li>
+                        <a href="https://google.com"
+                           target="_blank">
+                            Google
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://wikipedia.org"
+                           target="_blank">
+                            Wikipedia
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://youtube.com/kids"
+                           target="_blank">
+                            YouTube Kids
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </template>
+
+    <!-- Explorer -->
+    <template id="explorer-template">
+
+        <div class="window">
+
+            <div class="title-bar">
+                <span>📁 Explorer</span>
+
+                <div class="window-buttons">
+                    <button class="close-btn">✖</button>
+                </div>
+            </div>
+
+            <div class="window-content">
+
+                <h2>My Files</h2>
+
+                <ul>
+                    <li>🎨 Drawing.png</li>
+                    <li>📚 Homework.doc</li>
+                    <li>🎮 Games Folder</li>
+                    <li>🎵 Music.mp3</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </template>
+
+    <script src="js/windows.js"></script>
+    <script src="js/startmenu.js"></script>
+    <script src="js/desktop.js"></script>
+    <script src="js/apps.js"></script>
+    <script src="js/paint.js"></script>
+</body>
+</html>

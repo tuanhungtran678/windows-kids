@@ -216,16 +216,31 @@ function createTaskbarButton(
     windowEl.dataset.windowId =
         button.dataset.windowId;
 
-    button.addEventListener(
-        "click",
-        () => {
+button.addEventListener(
+    "click",
+    () => {
 
-            if (!windowEl.isConnected)
-                return;
+        if (!windowEl.isConnected)
+            return;
 
-            focusWindow(windowEl);
+        if (
+            windowEl.classList.contains(
+                "minimized"
+            )
+        ) {
+
+            windowEl.classList.remove(
+                "minimized"
+            );
+
+            button.classList.remove(
+                "minimized"
+            );
         }
-    );
+
+        focusWindow(windowEl);
+    }
+);
 
     taskbarApps.appendChild(button);
 }
@@ -259,26 +274,24 @@ function getAppTitle(appName) {
 
     const names = {
 
-        paint:
-            "🎨 Paint",
+    paint:
+        "🎨 Paint",
 
-        calculator:
-            "🧮 Calculator",
+    calculator:
+        "🧮 Calculator",
 
-        games:
-            "🎮 Games",
+    games:
+        "🎮 Games",
 
-        browser:
-            "🌐 Browser",
+    browser:
+        "🌐 Browser",
 
-        explorer:
-            "📁 Explorer"
+    explorer:
+        "📁 Explorer",
+
+    recyclebin:
+        "🗑 Recycle Bin"
     };
-
-    return (
-        names[appName] ||
-        appName
-    );
 }
 
 // =========================
@@ -290,3 +303,74 @@ window.createWindow =
 
 window.focusWindow =
     focusWindow;
+
+// =========================
+// MINIMIZE
+// =========================
+
+function attachMinimizeButton(
+    windowEl
+) {
+
+    const button =
+        windowEl.querySelector(
+            ".minimize-btn"
+        );
+
+    if (!button) return;
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            windowEl.classList.add(
+                "minimized"
+            );
+
+            const id =
+                windowEl.dataset.windowId;
+
+            document
+                .querySelectorAll(
+                    ".taskbar-app"
+                )
+                .forEach(btn => {
+
+                    if (
+                        btn.dataset.windowId === id
+                    ) {
+
+                        btn.classList.add(
+                            "minimized"
+                        );
+                    }
+                });
+        }
+    );
+}
+
+// =========================
+// MAXIMIZE
+// =========================
+
+function attachMaximizeButton(
+    windowEl
+) {
+
+    const button =
+        windowEl.querySelector(
+            ".maximize-btn"
+        );
+
+    if (!button) return;
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            windowEl.classList.toggle(
+                "maximized"
+            );
+        }
+    );
+}

@@ -1,0 +1,78 @@
+/* =========================
+   WINDOWS KIDS BOOT SCREEN
+   ========================= */
+
+#boot-screen {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    z-index: 99999;
+
+    background:
+        linear-gradient(
+            135deg,
+            #60a5fa,
+            #8b5cf6
+        );
+
+    color: white;
+
+    transition:
+        opacity 1s ease;
+}
+
+#boot-screen.hidden {
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.boot-logo {
+
+    font-size: 64px;
+
+    animation:
+        bounce 1.5s infinite;
+}
+
+.boot-title {
+
+    font-size: 42px;
+
+    font-weight: bold;
+}
+
+.boot-loading {
+
+    font-size: 18px;
+}
+
+.boot-dots {
+
+    display: inline-block;
+
+    width: 40px;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-12px);
+    }
+}

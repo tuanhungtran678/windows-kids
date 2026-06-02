@@ -1,35 +1,22 @@
 /* Taskbar */
 
 #taskbar {
-    position: fixed;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    height: 58px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 0 12px;
-
-    background:
-        rgba(255,255,255,.75);
 
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-clip: padding-box;
+
+    background:
+        rgba(255,255,255,.15);
 
     border-top:
-        1px solid rgba(255,255,255,.8);
-
-    z-index: 10000;
-
-    box-shadow:
-        0 -2px 12px rgba(0,0,0,.08);
+        1px solid rgba(
+            255,
+            255,
+            255,
+            .25
+        );
 }
-
 /* Start Button */
 
 #start-button {

@@ -17,36 +17,41 @@ body {
     background:
         linear-gradient(
             135deg,
-            #60a5fa 0%,
-            #8b5cf6 50%,
-            #ec4899 100%
+            #5b8def,
+            #7a7df5
         );
 
-    background-size: cover;
-}
+    width: 100vw;
 
+    height: calc(
+        100vh - 56px
+    );
+
+    position: relative;
+
+    overflow: hidden;
+}
 /* Desktop Icons */
 
 .desktop-icon {
 
-    border-radius: 12px;
+    width: 80px;
 
-    transition:
-        transform .2s,
-        background .2s;
+    padding: 6px;
+
+    margin: 4px;
+
+    text-align: center;
 }
 
 .desktop-icon:hover {
-
-    transform:
-        scale(1.08);
 
     background:
         rgba(
             255,
             255,
             255,
-            .15
+            .12
         );
 }
 
@@ -55,7 +60,7 @@ body {
 }
 
 .desktop-icon .icon {
-    font-size: 42px;
+    font-size: 48px;
 }
 
 .desktop-icon span {
@@ -150,71 +155,6 @@ body {
         transform:
             translateY(0)
             scale(1);
-    }
-}
-
-/* Cute Floating Clouds */
-
-#desktop::before,
-#desktop::after {
-    content: "";
-
-    position: absolute;
-
-    width: 220px;
-    height: 80px;
-
-    background:
-        rgba(255,255,255,.35);
-
-    border-radius: 999px;
-
-    filter: blur(8px);
-
-    pointer-events: none;
-}
-
-#desktop::before {
-    top: 60px;
-    left: 180px;
-
-    animation:
-        cloud1 18s linear infinite;
-}
-
-#desktop::after {
-    top: 180px;
-    right: 150px;
-
-    animation:
-        cloud2 22s linear infinite;
-}
-
-@keyframes cloud1 {
-    0% {
-        transform: translateX(-20px);
-    }
-
-    50% {
-        transform: translateX(30px);
-    }
-
-    100% {
-        transform: translateX(-20px);
-    }
-}
-
-@keyframes cloud2 {
-    0% {
-        transform: translateX(30px);
-    }
-
-    50% {
-        transform: translateX(-25px);
-    }
-
-    100% {
-        transform: translateX(30px);
     }
 }
 
